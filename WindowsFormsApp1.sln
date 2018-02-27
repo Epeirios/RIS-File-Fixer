@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{07631A58-5B47-440C-848B-E8C9FF99E304}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ris tool", "WindowsFormsApp1\ris tool.csproj", "{07631A58-5B47-440C-848B-E8C9FF99E304}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveDuplicates", "RemoveDuplicates\RemoveDuplicates.csproj", "{4B14980C-9FFC-4716-AF12-F5C4457FEB84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StemmersNet", "StemmersNet\StemmersNet.csproj", "{8F8C88DD-F172-4964-A49C-976437C7B538}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4B14980C-9FFC-4716-AF12-F5C4457FEB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B14980C-9FFC-4716-AF12-F5C4457FEB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B14980C-9FFC-4716-AF12-F5C4457FEB84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8C88DD-F172-4964-A49C-976437C7B538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8C88DD-F172-4964-A49C-976437C7B538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8C88DD-F172-4964-A49C-976437C7B538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8C88DD-F172-4964-A49C-976437C7B538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

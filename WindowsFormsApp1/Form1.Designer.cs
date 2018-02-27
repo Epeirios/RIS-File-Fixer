@@ -46,6 +46,7 @@
             // 
             // cbxProcessMethod
             // 
+            this.cbxProcessMethod.Enabled = false;
             this.cbxProcessMethod.FormattingEnabled = true;
             this.cbxProcessMethod.Location = new System.Drawing.Point(278, 12);
             this.cbxProcessMethod.Name = "cbxProcessMethod";
@@ -61,6 +62,7 @@
             this.cbxSpaceBetweenRecord.TabIndex = 2;
             this.cbxSpaceBetweenRecord.Text = "Allow Space between Records";
             this.cbxSpaceBetweenRecord.UseVisualStyleBackColor = true;
+            this.cbxSpaceBetweenRecord.Visible = false;
             // 
             // cbxSpaceInRecord
             // 
@@ -71,6 +73,7 @@
             this.cbxSpaceInRecord.TabIndex = 3;
             this.cbxSpaceInRecord.Text = "Allow Space whitin Records";
             this.cbxSpaceInRecord.UseVisualStyleBackColor = true;
+            this.cbxSpaceInRecord.Visible = false;
             // 
             // btnImport
             // 
@@ -80,18 +83,22 @@
             this.btnImport.TabIndex = 4;
             this.btnImport.Text = "Import .ris file";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnExport
             // 
+            this.btnExport.Enabled = false;
             this.btnExport.Location = new System.Drawing.Point(454, 300);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
             this.btnExport.TabIndex = 5;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnProcess
             // 
+            this.btnProcess.Enabled = false;
             this.btnProcess.Location = new System.Drawing.Point(454, 10);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(75, 23);

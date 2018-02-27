@@ -8,7 +8,8 @@ namespace WindowsFormsApp1
 {
     public enum ProcessMethods
     {
-        FirstAnalaysis,
-        DeleteDuplicateFields
+        AllMethods, 
+        DeleteDuplicateAbstracts,
+        NormalizeKeywords,
     }
 }

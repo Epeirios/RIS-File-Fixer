@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>StemmersNet</id>
+    <version>$version$</version>
+    <title>StemmersNet</title>
+    <authors>Iveonik Systems (www.iveonik.com)</authors>
+    <owners>Iveonik Systems (www.iveonik.com)</owners>
+    <projectUrl>https://stemmersnet.codeplex.com/</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Porting of snowballs stemmers to .NET Framework</description>
+    <!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>-->
+    <copyright>© Iveonik Systems, 2011-2012</copyright>
+    <tags>Stem Stemmer Snowball</tags>
+  </metadata>
+</package>

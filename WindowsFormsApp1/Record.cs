@@ -8,9 +8,9 @@ namespace WindowsFormsApp1
 {
     public class Record
     {
-        Dictionary<String, String> elements;
+        List<String[]> elements;
         
-        public Dictionary<String, String> Elements
+        public List<String[]> Elements
         {
             get { return elements; }
             set { elements = value; }
@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
 
         public Record()
         {
-            elements = new Dictionary<string, string>();
+            elements = new List<String[]>();
         }
     }
 }

@@ -13,6 +13,8 @@ namespace RemoveDuplicates
 {
     public partial class Form1 : Form
     {
+
+
         public Form1()
         {
             InitializeComponent();
@@ -100,7 +102,7 @@ namespace RemoveDuplicates
             stream.Close();
 
             treeView1.Controls.Add(new Control("DONE"));
-            treeView1.Refresh();
+            treeView1.Update();
         }
     }
 }
