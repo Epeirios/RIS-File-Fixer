@@ -11,5 +11,6 @@ namespace WindowsFormsApp1
         AllMethods, 
         DeleteDuplicateAbstracts,
         NormalizeKeywords,
+        GoogleApiAnalyses,
     }
 }

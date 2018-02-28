@@ -136,12 +136,48 @@ namespace WindowsFormsApp1
                     break;
                 case ProcessMethods.AllMethods:
                     DeleteDuplicateAbstracts();
-                    NormalizeKeywords();
+                    GoogleApiAnalyses();
 
+                    break;
+                case ProcessMethods.GoogleApiAnalyses:
+                    GoogleApiAnalyses();
                     break;
                 default:
                     break;
             }
+        }
+
+        private void GoogleApiAnalyses()
+        {
+            int requestcounter = 0;
+
+            for (int i = 0; i < recordList.Count; i++)
+            {
+                Record newRecord = new Record();
+                newRecord.Elements.Add(new string[] { "TY", "YOUR" });
+
+                foreach (var pair in recordList[i].Elements)
+                {
+                    if (pair[0] == "AB" || pair[0] == "KW" || pair[0] == "T1")
+                    {
+                        GoogleApi api = new GoogleApi();
+                        var result = api.DoAnalysis(pair[1]);
+
+                        requestcounter++;
+
+                        foreach (var item in result)
+                        {
+                            newRecord.Elements.Add(item);
+                        }
+                    }
+                }
+
+                newRecord.Elements.Add(new string[] { "ER", "" });
+
+                recordList[i] = newRecord;
+            }
+
+            TreeViewAddItem($"GoogleApiAnalyses - {requestcounter}");
         }
 
         private void NormalizeKeywords()
