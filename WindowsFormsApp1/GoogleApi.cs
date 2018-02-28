@@ -49,49 +49,41 @@ namespace WindowsFormsApp1
         {
             List<string[]> keywords = new List<string[]>();
 
+            string lemma = string.Empty;
+            string templemma = string.Empty;
+
             for (int i = 0; i < syntaxSenstiment.Count; i++)
             {
-                string lemma = string.Empty;
-                string templemma = string.Empty;
-
                 switch (syntaxSenstiment[i].PartOfSpeech.Tag)
                 {
                     case PartOfSpeech.Types.Tag.Noun:
                         if (templemma != string.Empty)
                         {
-                            lemma = templemma + syntaxSenstiment[i];
+                            lemma = templemma + syntaxSenstiment[i].Lemma;
                             templemma = string.Empty;
+                        }
+                        else
+                        {
+                            if (lemma != string.Empty)
+                            {
+                                lemma += " ";
+                            }
+                            lemma += syntaxSenstiment[i].Lemma;
                         }
                         break;
                     case PartOfSpeech.Types.Tag.Adj:
-                        templemma = syntaxSenstiment[i].Lemma + " ";
+                        templemma += syntaxSenstiment[i].Lemma + " ";
                         break;
                     default:
-                        break;
-                }
-
-                if (syntaxSenstiment[i].PartOfSpeech.Tag == PartOfSpeech.Types.Tag.Noun)
-                {
-                    string lemma = "";
-                    if (i >= 1)
-                    {
-                        if (syntaxSenstiment[i - 1].PartOfSpeech.Tag == PartOfSpeech.Types.Tag.Adj || syntaxSenstiment[i - 1].PartOfSpeech.Tag == PartOfSpeech.Types.Tag.Noun)
+                        if (lemma != string.Empty)
                         {
-                            if (i >= 2)
-                            {
-                                if (syntaxSenstiment[i - 2].PartOfSpeech.Tag == PartOfSpeech.Types.Tag.Adj || syntaxSenstiment[i - 2].PartOfSpeech.Tag == PartOfSpeech.Types.Tag.Noun)
-                                {
-                                    lemma += syntaxSenstiment[i - 2].Lemma + " ";
-                                }
-                            }
+                            keywords.Add(new string[] { "KW", lemma });
 
-                            lemma += syntaxSenstiment[i - 1].Lemma + " ";
+                            lemma = string.Empty;
+                            templemma = string.Empty;
                         }
-                    }
 
-                    lemma += syntaxSenstiment[i].Lemma;
-
-                    keywords.Add(new string[] { "KW", lemma });
+                        break;
                 }
             }
 

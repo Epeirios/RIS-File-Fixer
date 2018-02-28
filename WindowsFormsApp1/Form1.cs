@@ -153,26 +153,34 @@ namespace WindowsFormsApp1
 
             for (int i = 0; i < recordList.Count; i++)
             {
+                string sumtext = string.Empty;
+
                 Record newRecord = new Record();
-                newRecord.Elements.Add(new string[] { "TY", "YOUR" });
 
                 foreach (var pair in recordList[i].Elements)
                 {
+                    if (pair[0] != "KW" && pair[0] != "ER")
+                    {
+                        newRecord.Elements.Add(pair);
+                    }
+
                     if (pair[0] == "AB" || pair[0] == "KW" || pair[0] == "T1")
                     {
-                        GoogleApi api = new GoogleApi();
-                        var result = api.DoAnalysis(pair[1]);
-
-                        requestcounter++;
-
-                        foreach (var item in result)
-                        {
-                            newRecord.Elements.Add(item);
-                        }
+                        sumtext += " " + pair[1];
                     }
                 }
 
-                newRecord.Elements.Add(new string[] { "ER", "" });
+                GoogleApi api = new GoogleApi();
+                var result = api.DoAnalysis(sumtext);
+
+                requestcounter++;
+
+                foreach (var item in result)
+                {
+                    newRecord.Elements.Add(item);
+                }
+
+                newRecord.Elements.Add(new string[] { "ER", string.Empty });
 
                 recordList[i] = newRecord;
             }
