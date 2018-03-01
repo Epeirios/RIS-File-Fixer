@@ -21,7 +21,8 @@ namespace WindowsFormsApp1
             AnalyzeSyntaxResponse syntaxResponse = client.AnalyzeSyntax(new Document()
             {
                 Content = text,
-                Type = Document.Types.Type.PlainText
+                Type = Document.Types.Type.PlainText,
+                Language = "en"
             });
 
             var syntaxSenstiment = syntaxResponse.Tokens;
@@ -59,7 +60,7 @@ namespace WindowsFormsApp1
                     case PartOfSpeech.Types.Tag.Noun:
                         if (templemma != string.Empty)
                         {
-                            lemma = templemma + syntaxSenstiment[i].Lemma;
+                            lemma += templemma + syntaxSenstiment[i].Lemma;
                             templemma = string.Empty;
                         }
                         else
